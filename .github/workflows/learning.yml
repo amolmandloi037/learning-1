@@ -12,6 +12,8 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: Checkout code
+        uses: actions/checkout@v1
   
   run-windows-command:
     runs-on: windows-latest
