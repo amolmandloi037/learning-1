@@ -12,9 +12,19 @@ jobs:
         run: |
           node -v
           npm -v
-      - name: Checkout code
+      - name: Checkout code via v1
         uses: actions/checkout@v1
-  
+      - name: contents on v1 chckout  
+        run: |
+            ls
+            pwd
+     
+      - name: Checkout code via v2
+        uses: actions/checkout@v2
+      - name: contents on v2 chckout
+        run: |
+          ls
+          pwd
   run-windows-command:
     runs-on: windows-latest
     needs: ["run-shell-command"]
