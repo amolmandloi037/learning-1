@@ -18,13 +18,7 @@ jobs:
         run: |
             ls
             pwd
-     
-      - name: Checkout code via v2
-        uses: actions/checkout@v2
-      - name: contents on v2 chckout
-        run: |
-          ls
-          pwd
+
   run-windows-command:
     runs-on: windows-latest
     needs: ["run-shell-command"]
