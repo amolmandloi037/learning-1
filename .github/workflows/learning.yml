@@ -1,6 +1,7 @@
 name: shell commands
 on: [push]
-
+env:
+  NAME: Amol Mandloi
 jobs:
   run-shell-command:
 
@@ -12,6 +13,7 @@ jobs:
         run: |
           node -v
           npm -v
+          echo "Your name is ${NAME}"
       - name: Checkout code via v1
         uses: actions/checkout@v1
       - name: contents on v1 chckout  
