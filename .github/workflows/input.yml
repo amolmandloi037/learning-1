@@ -1,0 +1,33 @@
+name: shell commands
+on: [push]
+env:
+  NAME: Amol Mandloi
+jobs:
+  run-shell-command:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo a string
+        run: echo "Hello Amol, how are you"
+      - name: multiline script
+        run: |
+          node -v
+          npm -v
+          echo "Your name is ${NAME}"
+     
+      - name: Checkout code via v2
+        uses: actions/checkout@v2
+      - name: contents on v2 chckout
+        run: |
+          ls
+          pwd
+      - name: Read file contents
+        id: read_file
+        uses: andstor/file-reader-action@v1
+        with:
+          path: "package.json"
+
+      - name: File contents
+        run: echo "${ steps.read_file.outputs.contents }"
+         
+
