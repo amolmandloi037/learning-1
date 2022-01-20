@@ -1,5 +1,6 @@
-name: shell commands
-on: [push]
+name: read
+on: 
+  workflow_dispatch:
 env:
   NAME: Amol Mandloi
 jobs:
